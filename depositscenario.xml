@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Testsss" thread-count="1" parallel="false">
+    <classes>
+   
+ <class name="testcases.TC_25_Create_Holiday_Master"/>
+     
+       <class name="testcases.TC_26_Edit_Holiday_Master"/>
+     
+      <class name="testcases.TC_27_Delete_Holiday"/>
+     
+
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
