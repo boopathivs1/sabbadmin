@@ -74,7 +74,36 @@ VerifyElementnotAvailable("(.//h4[text()='"+corpname+"']//following::button[@id=
 	
 			return this;
 		}
-	
+	public Userspage AjmancorpFormSubmission(String corpidname,String corpname,String segment,String industry,String country,String channels,String address,String Manager,String loginsecuirty,String transactionSecurity) throws InterruptedException{
+		enterByXpathExplict(prop.getProperty("enter.corpidname.form.xpath"),corpidname);
+		dropdownSelection(prop.getProperty("click.segmentid.form.xpath"),segment);
+
+		enterByXpathExplict(prop.getProperty("enter.desc.cust.form.xpath"),corpname);
+//		dropdownSelection(prop.getProperty("select.industry.xpath"),industry);
+//		clickByXpathExplict(prop.getProperty("select.industry.xpath"));
+//		clickByXpathExplict("//ul[@class='chosen-results']//li[.='"+industry+"']");	
+		dropdownSelectionindex(prop.getProperty("select.industry.xpath"),industry,3);
+		dropdownSelection(prop.getProperty("select.cif.country.xpath"),country);
+		//dropdownSelection(prop.getProperty("select.cif.channels.xpath"),channels);
+		enterByXpathExplict(prop.getProperty("enter.address.cust.form.xpath"),address);
+		
+		dropdownSelection(prop.getProperty("select.cif.country.xpath"),country);
+		scrolltoelementJs(prop.getProperty("select.ajman.manager.xpath"));	
+		dropdownSelection(prop.getProperty("select.ajman.manager.xpath"),Manager);
+		scrolltoelementJs(prop.getProperty("click.cust.checkbox.link.xpath"));	
+		clickByXpathExplict(prop.getProperty("click.cust.checkbox.link.xpath"));				
+
+
+		//dropdownSelection(prop.getProperty("select.log.secuirty.xpath"),loginsecuirty);
+		//dropdownSelection(prop.getProperty("select.log.transsecuirty.xpath"),transactionSecurity);
+
+		//dropdownSelectionindex(prop.getProperty("select.log.transsecuirty.xpath"),transactionSecurity,2);
+		clickByXpathExplict(prop.getProperty("click.cif.create.button.xpath"));				
+				
+				
+				
+			return new Userspage(driver, test);
+			}
 	
 	public Userspage corpFormSubmission(String corpidname,String corpname,String segment,String industry,String country,String channels,String loginsecuirty,String transactionSecurity) throws InterruptedException{
 enterByXpathExplict(prop.getProperty("enter.corpidname.form.xpath"),corpidname);
@@ -121,7 +150,8 @@ clickByXpathExplict(prop.getProperty("corp.update.button.xpath"));
 	
 	public Userspage clickDeleteCorp(){
 	
-	clickByXpathExplict(prop.getProperty("corp.delete.button.xpath"));				
+	clickByXpathExplict(prop.getProperty("corp.delete.button.xpath"));	
+	clickByXpathExplict(prop.getProperty("click.delete.yesButton.xpath"));
 	
 	return new Userspage(driver, test);
 	}		
