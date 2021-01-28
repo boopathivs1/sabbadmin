@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test name="Test">
+  <test name="Test" thread-count="1" parallel="false">
     <classes>
       <class name="Ajman_Testcases.TC_01_Create_Bank_Users"/>
       <class name="Ajman_Testcases.TC_02_Edit_Bank_Users"/>
@@ -44,48 +44,6 @@
  <class name="Ajman_Testcases.TC_29_Edit_Limit_Group_Corporate"/>
     
       <class name="Ajman_Testcases.TC_30_Delete_Limit_Group_Corporate"/>
- <class name="Ajman_Testcases.TC_31_Create_Limit_Geography"/>
-
-
-
-     <class name="Ajman_Testcases.TC_32_Edit_Limit"/>
-  <class name="Ajman_Testcases.TC_33_Delete_Limit_Geography"/>
-          <class name="Ajman_Testcases.TC_34_Admin_Reports_download"/>
-<class name="Ajman_Testcases.TC_35_Create_Access_Rights_Master"/>
-    <class name="Ajman_Testcases.TC_36_Edit_Access_Rights_Master"/>
-    <class name="Ajman_Testcases.TC_37_Delete_Access"/>
-     
-      <class name="Ajman_Testcases.TC_38_Create_Group"/>
-
-      <class name="Ajman_Testcases.TC_39_Edit_Group"/>
-   
-      <class name="Ajman_Testcases.TC_40_Delete_Group"/>
-  
-
-      <class name="Ajman_Testcases.TC_47_Create_New_Users"/>
- <class name="Ajman_Testcases.TC_48_Edit_Users"/>
-
-
-      <class name="Ajman_Testcases.TC_50_Assign_Corporates"/>
-
-      <class name="Ajman_Testcases.TC_51_Assign_Modify_Rights"/>
-      
-      <class name="Ajman_Testcases.TC_52_Deassign_Access_Rights"/>
-<class name="Ajman_Testcases.TC_49_Delete_Users"/>
-
-      <class name="Ajman_Testcases.TC_53_Matrix_Creation"/>
- <class name="Ajman_Testcases.TC_54_Matrix_Deletion"/>
-
-      <class name="Ajman_Testcases.TC_55_Matrix_Creation"/>
-     <class name="Ajman_Testcases.TC_56_Matrix_Creation"/>
-        <class name="Ajman_Testcases.TC_57_Matrix_Deletion"/>
-
-      <class name="Ajman_Testcases.TC_58_Matrix_Creation"/>
-     
-      <class name="Ajman_Testcases.TC_59_Matrix_Creation"/>
-      
-      <class name="Ajman_Testcases.TC_60_Matrix_Deletion"/>
-
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+    <classes>
+             <class name="testcases.TC_01_Create_Bank_Users"/>
+      <class name="testcases.TC_02_Edit_Bank_Users"/>
+      <class name="testcases.TC_04_Assign_Roles_Bank_User"/>
+      <class name="testcases.TC_05_Assign_Access_Rights"/>
+      <class name="testcases.TC_06_Deassign_Delete_Access_Rights"/>
+      <class name="testcases.TC_09_DeActivate_User"/>
+      
+      <class name="testcases.TC_10_Activate_User"/>
+      <class name="testcases.TC_03_Delete_Bank_Users"/>
+
+      <class name="testcases.TC_11_Create_Role"/>
+      <class name="testcases.TC_12_Edit_Role"/>
+      <class name="testcases.TC_14_Create_Access_Rights"/>
+
+      <class name="testcases.TC_15_Edit_Access_Rights"/>
+
+      
+      <class name="testcases.TC_16_delete_Access_Rights"/>
+      
+      <class name="testcases.TC_13_Delete_Role"/>
+      <class name="testcases.TC_17_Update_Password_Policy"/>
+      <class name="testcases.TC_18_Create_Department_master"/>
+
+      <class name="testcases.TC_19_Edit_Department_master"/>
+
+      <class name="testcases.TC_20_Delete_Department_master"/>
+      <class name="testcases.TC_21_Create_Error_Message"/>
+
+
+      <class name="testcases.TC_22_Edit_Error_Message"/>
+      <class name="testcases.TC_23_Delete_Error_Message"/>
+
+      <class name="testcases.TC_24_Update_Winow_Timings"/>
+      
+<class name="testcases.TC_25_Create_Holiday_Master"/>
+     
+       <class name="testcases.TC_26_Edit_Holiday_Master"/>
+     
+      <class name="testcases.TC_27_Delete_Holiday"/>
+   
+      <class name="testcases.TC_28_Create_Limit"/>
+      
+      <class name="testcases.TC_29_Edit_Limit_Group_Corporate"/>
+
+
+      <class name="testcases.TC_30_Delete_Limit_Group_Corporate"/>
+  <class name="testcases.TC_31_Create_Limit_Geography"/>
+
+
+      <class name="testcases.TC_32_Edit_Limit"/>
+     
+     
+      
+      <class name="testcases.TC_33_Delete_Limit_Geography"/> 
+       <class name="testcases.TC_34_Admin_Reports_download"/>
+      
+      <class name="testcases.TC_35_Create_Access_Rights_Master"/>
+
+      <class name="testcases.TC_36_Edit_Access_Rights_Master"/>
+      <class name="testcases.TC_37_Delete_Access"/>
+      
+            <class name="testcases.TC_38_Create_Group"/>
+      
+            <class name="testcases.TC_39_Edit_Group"/>
+
+
+      <class name="testcases.TC_40_Delete_Group"/>
+      
+      
+            <class name="testcases.TC_47_Create_New_Users"/>
+      <class name="testcases.TC_48_Edit_Users"/>
+      <class name="testcases.TC_50_Assign_Corporates"/>
+
+
+      <class name="testcases.TC_51_Assign_Modify_Rights"/>
+      <class name="testcases.TC_52_Deassign_Access_Rights"/>
+ 
+      <class name="testcases.TC_49_Delete_Users"/>
+
+      
+
+
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
