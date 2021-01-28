@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test name="Test">
+  <test name="Test" thread-count="1" parallel="false">
     <classes>
              <class name="testcases.TC_01_Create_Bank_Users"/>
       <class name="testcases.TC_02_Edit_Bank_Users"/>
