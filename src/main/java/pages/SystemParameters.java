@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -276,6 +277,37 @@ verifyPageSource("Duplicate Record","Duplicate Record Exist Message has dispalyi
 return this;
 }
 
+
+public SystemParameters ajmanGrouplimitForm(String channel,String transCurrency,String perlimitAmount,String LimitCurrency,String dailyLimitAmount) throws InterruptedException{
+
+	
+	//clickByXpathExplict(prop.getProperty("click.ajman.cjannels.xpath"));
+	PressEnterKey(prop.getProperty("select.ajman.cjannels.xpath"));
+	
+	
+	scrolltoelementJs(prop.getProperty("select.translimit.currency.choose.xpath"));
+dropdownSelection(prop.getProperty("select.translimit.currency.choose.xpath"),transCurrency);
+enterByXpathExplict(prop.getProperty("enter.pertranslimit.xpath"),perlimitAmount);
+
+clickByXpathExplict(prop.getProperty("fromdate.limit.xpath"));
+clickByXpathExplict(prop.getProperty("click.holiday.form.year.xpath"));
+clickByXpathExplict(prop.getProperty("click.holiday.form.year.month.xpath"));
+
+clickByXpathExplict(prop.getProperty("fromdate.select.limit.xpath"));
+
+//clickByXpathExplict(prop.getProperty("todate.limit.xpath"));
+
+//clickByXpathExplict(prop.getProperty("todate.select.limit.xpath"));
+dropdownSelectionindex(prop.getProperty("daily.limit.currency.xapth"),LimitCurrency,2);
+enterByXpathExplict(prop.getProperty("enter.daily.limit.xpath"),dailyLimitAmount);
+clickByXpathExplict(prop.getProperty("click.translimit.create.button.xpath"));
+
+
+verifyPageSource("Duplicate Record","Duplicate Record Exist Message has dispalying");
+
+
+return this;
+}
 public SystemParameters clickwindownext(){
 	clickByXpathExplict(prop.getProperty("click.windowtime.next.button.xpath"));
 

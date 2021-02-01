@@ -33,10 +33,10 @@ public void setDatag() {
 
 @Test(groups={"sanity"},dataProvider="fetch")
 public void createUser(String casename,String Username,String Password,String otp,String transactionname,
-		String searchkeyword,String groupid,String corpid,String auth1,String auth2,
+		String searchkeyword,String groupid,String corpid,String auth1,String auth2,String channel,
 		String transCurrency,String perlimitAmount,String LimitCurrency,
 		String dailyLimitAmount,String authorizepwd,String firstname,String autsdsdh,
-		String data8s,String data12w,String data14,String date) throws Exception{
+		String data8s,String data12w,String data14) throws Exception{
 	AuthorizePasswd=authorizepwd;
 	String grpid=regvalue(groupid);
 	String crpid=regvalue(corpid);
@@ -57,37 +57,37 @@ public void createUser(String casename,String Username,String Password,String ot
 .limitCatSelection(grpid, crpid)
 
 
-.ajmanGrouplimitFillForm(transCurrency, perlimit, LimitCurrency, dailylimit)
+.ajmanGrouplimitForm(channel,transCurrency, perlimit, LimitCurrency, dailylimit);
 
 
 
-.clicksaabCorporateRequestPage()
-.filterRequestFromAdminDateline("Transaction Limits Request","Pending for Authorization")
-
-.verifyAdminbuzz(auth1,auth2, "Transaction Limits Creation Request")
-
-.logout(true,usertype);	
-
-AuthUsername=auth1;
-
-
-
-getAjmanUrl();
-
-new SaabCorporateAdminHomePage(driver, test)
-.enterUsernameID(AuthUsername)
-.enterPassword(Password)
-.clickLoginButtonFinal()
-
-.filterRequestFromAdminDateline("Transaction Limits Request","Pending for Authorization")
-.authorization()
-.filterRequestFromAdminDateline("Transaction Limits Request","Accepted")
-.verifyDatelineRequestADMINLogin("Accepted");
-
-
-logout(LogoutStatus,usertype);	
-
-loginfoSuccess(testCaseName,testDescription);
+//.clicksaabCorporateRequestPage()
+//.filterRequestFromAdminDateline("Transaction Limits Request","Pending for Authorization")
+//
+//.verifyAdminbuzz(auth1,auth2, "Transaction Limits Creation Request")
+//
+//.logout(true,usertype);	
+//
+//AuthUsername=auth1;
+//
+//
+//
+//getAjmanUrl();
+//
+//new SaabCorporateAdminHomePage(driver, test)
+//.enterUsernameID(AuthUsername)
+//.enterPassword(Password)
+//.clickLoginButtonFinal()
+//
+//.filterRequestFromAdminDateline("Transaction Limits Request","Pending for Authorization")
+//.authorization()
+//.filterRequestFromAdminDateline("Transaction Limits Request","Accepted")
+//.verifyDatelineRequestADMINLogin("Accepted");
+//
+//
+//logout(LogoutStatus,usertype);	
+//
+//loginfoSuccess(testCaseName,testDescription);
 
 }
 

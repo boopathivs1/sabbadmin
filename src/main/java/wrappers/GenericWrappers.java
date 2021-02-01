@@ -1577,6 +1577,40 @@ public void loadendtimecalc(String xpath,String loadmsg) throws InterruptedExcep
 		}
 	}
 
+	public void PressEnterKey(String xpathVal) {
+		try {
+			readywithtime(xpathVal);
+			readystate();
+			jqueryload();
+		} catch (InterruptedException e1) {
+		}
+
+	//	waitForElement(xpathVal,5);
+		WebDriverWait wait;
+		try{
+			Thread.sleep(2000);
+			 wait = new WebDriverWait(driver,60);
+			
+			WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathVal)));
+			
+			element.sendKeys(Keys.ENTER);
+			
+			reportStep("The element with xpath: "+xpathVal+" is entered.", "PASS");
+		}
+		
+		
+		catch (Exception e) {
+		
+			
+			//	reportStep("The data: "+xpathVal+" could not be entered in the field :"+xpathVal, "FAIL");
+
+				reportStep("The data: "+xpathVal+" could not be entered in the field.Because No suchelement exception has occured :", "FAIL");
+
+		}
+	}
+
+	
+	
 	public void fileUploadByXpathExplict(String xpathVal, String data) {
 	//	WebDriverWait wait;
 		try{
