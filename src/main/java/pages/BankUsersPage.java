@@ -283,6 +283,13 @@ verifyTextByXpathExplicitwait(prop.getProperty("verify.assign.user.roles.xpath")
 		return this;
 	}
 
+	public BankUsersPage verifyAjmanAssignRoles(String role){
+		verifyTextByXpathExplicitwait(prop.getProperty("verify.assign.user.roles.xpath"),role);		
+
+
+				return this;
+			}
+
 	
 	public BankUsersPage verifyAccess(){
 verifyTextByXpathExplicitwait(prop.getProperty("verify.bank.access.assign.xpath"),"Assigned");		
