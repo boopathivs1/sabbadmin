@@ -173,6 +173,52 @@ if(a){
 	
 	return this;
 }
+public SystemParameters updatelimitwithDate(String limitid,String perlimitamount,String dailylimit) throws InterruptedException{
+	clickByXpathExplict("(.//td[contains(text(),'"+limitid+"')]//following::button)[1]");
+
+	
+	
+	
+enterByXpathExplict(prop.getProperty("enter.pertranslimit.xpath"),perlimitamount);
+enterByXpathExplict(prop.getProperty("enter.daily.limit.xpath"),dailylimit);
+
+clickByXpathExplict(prop.getProperty("click.ajman.firstcal.xpath"));
+
+
+
+selectYearMonth();
+
+clickByXpathExplict(prop.getProperty("ajman.limit.day.cal.xpath"));
+
+
+
+
+
+clickByXpathExplict(prop.getProperty("click.ajman.seccal.xpath"));
+
+selectYearMonth();
+
+
+
+clickByXpathExplict(prop.getProperty("ajman.limit.daynext.cal.xpath"));
+
+	clickByXpathExplict(prop.getProperty("click.limit.update.xpath"));
+	verifyPageSource("Duplicate Record","Duplicate Record Exist Message has dispalying");
+
+return this;
+}
+
+public void selectYearMonth(){
+	clickByXpathExplict(prop.getProperty("ajman.enter.year.cal.xpath"));
+
+	clickByXpathExplict(prop.getProperty("ajman.enter.month.cal.xpath"));
+
+	
+
+}
+
+
+
 
 
 
@@ -212,6 +258,8 @@ return this;
 }
 
 
+
+
 public SystemParameters limitOthersCatSelection(String Country) throws InterruptedException{
 	clickByXpathExplict(prop.getProperty("click.createlimit.button.xpath"));
 
@@ -224,8 +272,60 @@ public SystemParameters limitOthersCatSelection(String Country) throws Interrupt
 return this;
 }
 
+public SystemParameters ajmanlimitOthersCatSelection(String Country) throws InterruptedException{
+	clickByXpathExplict(prop.getProperty("click.createlimit.button.xpath"));
+
+	
+	
+	clickByXpathExplict(prop.getProperty("channels.ajman.dd.xpath"));
+	
+dropdownSelection(prop.getProperty("channels.ajman.dd.xpath"),"WEB");
 
 
+	clickByXpathExplict(prop.getProperty("click.other.translimit.xpath"));
+
+	dropdownSelection(prop.getProperty("others.country.choosen.xpath"),Country);
+	
+	
+	
+return this;
+}
+public SystemParameters ajmanlimitOthersCatSelection_channel(String Country,String channel) throws InterruptedException{
+	clickByXpathExplict(prop.getProperty("click.createlimit.button.xpath"));
+
+	
+	
+	clickByXpathExplict(prop.getProperty("channels.ajman.dd.xpath"));
+	
+dropdownSelection(prop.getProperty("channels.ajman.dd.xpath"),channel);
+
+
+	clickByXpathExplict(prop.getProperty("click.other.translimit.xpath"));
+
+	dropdownSelection(prop.getProperty("others.country.choosen.xpath"),Country);
+	
+	
+	
+return this;
+}
+
+public SystemParameters ajmanGrouplimitCatSelection_channel(String channel,String groupid,String Corpid, String LimitID) throws InterruptedException{
+	clickByXpathExplict(prop.getProperty("click.createlimit.button.xpath"));
+
+	
+	
+	clickByXpathExplict(prop.getProperty("channels.ajman.dd.xpath"));
+	
+dropdownSelection(prop.getProperty("channels.ajman.dd.xpath"),channel);
+dropdownSelection(prop.getProperty("select.groupid.limit.choosen.xpath"),groupid);
+
+dropdownSelectionindex(prop.getProperty("select.corpid.limit.xapth"),Corpid, 2);
+enterByXpathExplict(prop.getProperty("enter.geocode.xpath"),LimitID);
+
+
+		
+return this;
+}
 public SystemParameters GrouplimitFillForm(String transCurrency,String perlimitAmount,String LimitCurrency,String dailyLimitAmount) throws InterruptedException{
 
 	scrolltoelementJs(prop.getProperty("select.translimit.currency.choose.xpath"));
@@ -278,11 +378,10 @@ return this;
 }
 
 
-public SystemParameters ajmanGrouplimitForm(String channel,String transCurrency,String perlimitAmount,String LimitCurrency,String dailyLimitAmount) throws InterruptedException{
+
+public SystemParameters ajmanGrouplimitForm(String transCurrency,String perlimitAmount,String LimitCurrency,String dailyLimitAmount) throws InterruptedException{
 
 	
-	//clickByXpathExplict(prop.getProperty("click.ajman.cjannels.xpath"));
-	PressEnterKey(prop.getProperty("select.ajman.cjannels.xpath"));
 	
 	
 	scrolltoelementJs(prop.getProperty("select.translimit.currency.choose.xpath"));
@@ -308,6 +407,43 @@ verifyPageSource("Duplicate Record","Duplicate Record Exist Message has dispalyi
 
 return this;
 }
+
+public SystemParameters entergeolimitCode(String geocode){
+enterByXpathExplict(prop.getProperty("enter.geocode.xpath"),geocode);
+return this;	
+}
+
+
+
+
+public SystemParameters ajmanCreateGeographylimitFillForm(String transCurrency,String perlimitAmount,String LimitCurrency,String dailyLimitAmount) throws InterruptedException{
+
+	scrolltoelementJs(prop.getProperty("select.translimit.currency.choose.xpath"));
+dropdownSelection(prop.getProperty("select.translimit.currency.choose.xpath"),transCurrency);
+enterByXpathExplict(prop.getProperty("enter.pertranslimit.xpath"),perlimitAmount);
+
+clickByXpathExplict(prop.getProperty("fromdate.limit.xpath"));
+clickByXpathExplict(prop.getProperty("click.holiday.form.year.xpath"));
+clickByXpathExplict(prop.getProperty("click.holiday.form.year.month.xpath"));
+
+clickByXpathExplict(prop.getProperty("fromdate.select.limit.xpath"));
+
+//clickByXpathExplict(prop.getProperty("todate.limit.xpath"));
+
+//clickByXpathExplict(prop.getProperty("todate.select.limit.xpath"));
+dropdownSelectionindex(prop.getProperty("daily.limit.currency.xapth"),LimitCurrency,2);
+enterByXpathExplict(prop.getProperty("enter.daily.limit.xpath"),dailyLimitAmount);
+clickByXpathExplict(prop.getProperty("click.translimit.create.button.xpath"));
+
+
+verifyPageSource("Duplicate Record","Duplicate Record Exist Message has dispalying");
+
+
+return this;
+}
+
+
+
 public SystemParameters clickwindownext(){
 	clickByXpathExplict(prop.getProperty("click.windowtime.next.button.xpath"));
 

@@ -56,7 +56,8 @@ String perlim=regvalue(perlimit);
 .filterTransconfig(transactionname, searchkeyword)
 .clicktransname(searchkeyword)
 .limitSearch(limitnum, limittransname)
-.updatelimit(limitnum, perlim,dailylim)
+//.updatelimit(limitnum, perlim,dailylim)
+.updatelimitwithDate(limitnum, perlim,dailylim)
 
 
 .clicksaabCorporateRequestPage()
