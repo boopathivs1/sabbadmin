@@ -30,7 +30,7 @@ public void setDatag() {
 }
 
 @Test(groups={"sanity"},dataProvider="fetch")
-public void createUser(String casename,String Username,String Password,String Otp,String userid,String auth1,String auth2,String authorizepwd,String data4,String data5,String data6,String daat7,String data8,String data9,String data11,String data12,String data13,String firstname,String phonenumber,String emailid,String empid) throws Exception{
+public void createUser(String casename,String Username,String Password,String Otp,String userid,String auth1,String auth2,String authorizepwd,String role,String data4,String data5,String data6,String daat7,String data8,String data9,String data11,String data12,String data13,String firstname,String phonenumber,String emailid) throws Exception{
 	AuthorizePasswd=authorizepwd;
 	try{
 		getAjmanUrl();
@@ -77,7 +77,7 @@ getAjmanUrl();
 	//.NewAssignRolesLink()
 	
 	//.clickUsersAssignRolesLink(userid)
-	.verifyAssignRoles();
+	.verifyAjmanAssignRoles(role);
 	logout(LogoutStatus,usertype);	
 
 	
