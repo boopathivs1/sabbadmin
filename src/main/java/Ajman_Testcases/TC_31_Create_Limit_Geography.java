@@ -50,7 +50,7 @@ public void createUser(String casename,String Username,String Password,String ot
 .clicktransconfig()
 .filterTransconfig(transactionname, searchkeyword)
 .clicktransname(searchkeyword)
-.ajmanlimitOthersCatSelection(Country)
+.ajmanlimitOthersCatSelection_channel(Country, channel)
 
 //.GrouplimitFillForm(transCurrency, perlimitAmount,Currencyname, dailyLimitAmount)
 .entergeolimitCode(limitcode)

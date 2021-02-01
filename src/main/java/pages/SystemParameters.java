@@ -287,6 +287,24 @@ dropdownSelection(prop.getProperty("channels.ajman.dd.xpath"),"WEB");
 	
 return this;
 }
+public SystemParameters ajmanlimitOthersCatSelection_channel(String Country,String channel) throws InterruptedException{
+	clickByXpathExplict(prop.getProperty("click.createlimit.button.xpath"));
+
+	
+	
+	clickByXpathExplict(prop.getProperty("channels.ajman.dd.xpath"));
+	
+dropdownSelection(prop.getProperty("channels.ajman.dd.xpath"),channel);
+
+
+	clickByXpathExplict(prop.getProperty("click.other.translimit.xpath"));
+
+	dropdownSelection(prop.getProperty("others.country.choosen.xpath"),Country);
+	
+	
+	
+return this;
+}
 
 
 public SystemParameters GrouplimitFillForm(String transCurrency,String perlimitAmount,String LimitCurrency,String dailyLimitAmount) throws InterruptedException{
