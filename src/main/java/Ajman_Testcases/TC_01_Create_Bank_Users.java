@@ -26,7 +26,7 @@ public void setDatag() {
 	testKeyword="TC01";
 	LogoutStatus=true;
 	usertype="CIBAdmin";
-
+//
 }
 
 @Test(groups={"sanity"},dataProvider="fetch")
