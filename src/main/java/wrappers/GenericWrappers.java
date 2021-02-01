@@ -765,7 +765,7 @@ return B;
 				driver = new RemoteWebDriver(new URL("http://"+sHubUrl+":"+sHubPort+"/wd/hub"), dc);
 				else{ // this is for local run
 				if(browser.equalsIgnoreCase("chrome")){
-					System.setProperty("webdriver.chrome.driver", "./drivers/chromedrivers.exe");
+					System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver85.exe");
 					driver = new ChromeDriver();
 			
 				}else{

@@ -35,7 +35,7 @@ public void setDatag() {
 public void createUser(String casename,String Username,String Password,String otp,String transactionname,
 		String searchkeyword,String Country,String auth1,String auth2,
 		String transCurrency,String perlimitAmount,String Currencyname,
-		String dailyLimitAmount,String authorizepwd,String firstname,String autsdsdh,
+		String dailyLimitAmount,String authorizepwd,String channel,String limitcode,
 		String data8s,String data12w,String data14,String date,String corpid) throws Exception{
 	
 	AuthorizePasswd=authorizepwd;
@@ -50,11 +50,11 @@ public void createUser(String casename,String Username,String Password,String ot
 .clicktransconfig()
 .filterTransconfig(transactionname, searchkeyword)
 .clicktransname(searchkeyword)
-.limitOthersCatSelection(Country)
+.ajmanlimitOthersCatSelection(Country)
 
-.GrouplimitFillForm(transCurrency, perlimitAmount,Currencyname, dailyLimitAmount)
-
-
+//.GrouplimitFillForm(transCurrency, perlimitAmount,Currencyname, dailyLimitAmount)
+.entergeolimitCode(limitcode)
+.ajmanCreateGeographylimitFillForm(transCurrency, perlimitAmount,Currencyname, dailyLimitAmount)
 
 
 .clicksaabCorporateRequestPage()
